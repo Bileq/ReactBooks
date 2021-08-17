@@ -1,4 +1,31 @@
 * {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
+}
+.App {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  width: 60%;
+}
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#searchInput {
+  border: none;
+  border-bottom: .5px black solid 
+}
+#searchInput:focus {
+  outline: none;
+}
+#searchBtn {
+  border-radius: 5px;
+  border: 1px black solid;
+  font-size: 10px;
+  margin-left: 10px;
+}
+#searchBtn:hover {
+  background: rgb(158, 157, 157);
 }

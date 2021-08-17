@@ -1,13 +1,12 @@
 import React from 'react'
 
 const Search = props => (
-    <div>
+    <div className="search">
         <form onSubmit={props.handleSubmit}>
             <label>
-                Search:
-                <input type="text" name="name" onChange={props.handleChange}/>
+                <input type="text" name="name" placeholder="Search..." id="searchInput" onChange={props.handleChange}/>
             </label>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Search" id="searchBtn"/>
         </form>
     </div>
 
