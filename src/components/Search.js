@@ -6,7 +6,7 @@ const Search = props => (
             <label>
                 <input type="text" name="name" placeholder="Search..." id="searchInput" onChange={props.handleChange}/>
             </label>
-            <input type="submit" value="Search" id="searchBtn"/>
+            <input type="submit" value="Search" id="searchBtn"/> 
         </form>
     </div>
 

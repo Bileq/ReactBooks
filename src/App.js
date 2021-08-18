@@ -2,33 +2,50 @@ import React, {useState} from 'react'
 import './App.css';
 import axios from 'axios'
 import Search from './components/Search'
+import Books from './components/Books'
 
 
 function App() {
 
+<<<<<<< HEAD
   const [book, setBook] = useState('');
-  //const [apiKey, setApiKey] = useState('API_KEY')
+  const [apiKey, setApiKey] = useState('API_KEY')
+  const [apiResponse, setApiResponse] = useState("")
+=======
+  const [book, setBook] = useState("");
+  const [apiKey, setApiKey] = useState('AIzaSyBv1luZ0uhkKsYH6zvnE_aizYBJsUq_ShI')
+  const [apiResponse, setApiResponse] = useState([])
+  //const [title, setTitle] = useState([])
+>>>>>>> 873df77 (Add Books and Book components)
+  
 
   const handleChange = event => {
-    setBook(event.target.value)
-    console.log("change")
-
+    const book = event.target.value
+    setBook(book)
   }
 
   const handleSubmit = event => {
-    event.preventDefault();
-
-
-    console.log(book)
-  }
-
+    event.preventDefault()
+    //Change comments to ${book}
+    axios.get(`https://jsonplaceholder.typicode.com/comments/?&_limit=5`)
+      .then(response => {
+        setApiResponse(response.data)
+      })
+  };   
+  
+  //console.log(apiResponse)
+  
   return (
-
     <div className="App">
       <Search
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        />
+      />
+      <Books
+        comment={apiResponse}
+      />
+        
+        
     </div>
   );
 }
