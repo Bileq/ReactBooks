@@ -7,16 +7,10 @@ import Books from './components/Books'
 
 function App() {
 
-<<<<<<< HEAD
-  const [book, setBook] = useState('');
-  const [apiKey, setApiKey] = useState('API_KEY')
-  const [apiResponse, setApiResponse] = useState("")
-=======
   const [book, setBook] = useState("");
   const [apiKey, setApiKey] = useState('API_KEY')
   const [apiResponse, setApiResponse] = useState([])
   //const [title, setTitle] = useState([])
->>>>>>> 873df77 (Add Books and Book components)
   
 
   const handleChange = event => {
@@ -44,6 +38,8 @@ function App() {
       <Books
         comment={apiResponse}
       />
+        
+        
     </div>
   );
 }
