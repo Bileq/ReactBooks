@@ -5,4 +5,4 @@ const Book = props => (
     null
 )
 
-export default Book
+export default Book;
