@@ -7,19 +7,22 @@ import Search from './components/Search'
 function App() {
 
   const [book, setBook] = useState('');
-  //const [apiKey, setApiKey] = useState('API_KEY')
-
+  const [apiKey, setApiKey] = useState('AIzaSyBv1luZ0uhkKsYH6zvnE_aizYBJsUq_ShI')
+  const [apiResponse, setApiResponse] = useState("")
+  
   const handleChange = event => {
-    setBook(event.target.value)
-    console.log("change")
-
+    const book = event.target.value
+    setBook(book)
   }
 
   const handleSubmit = event => {
     event.preventDefault();
 
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=1`)
+    .then( response => {
+      setApiResponse(response.data.items)
+    })
 
-    console.log(book)
   }
 
   return (
