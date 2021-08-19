@@ -8,26 +8,38 @@
   padding-top: 5%;
   width: 60%;
 }
-.search {
+.Search {
   margin-left: auto;
   margin-right: auto;
   width: 40%;
 }
-#searchInput {
+#SearchInput {
   border: none;
   border-bottom: .5px black solid;
   font-size: 20px;
 }
-#searchInput:focus {
+#SearchInput:focus {
   outline: none;
 }
-#searchBtn {
+#SearchBtn {
   border-radius: 5px;
   border: 1px black solid;
   font-size: 20px;
   margin-left: 10px;
   
 }
-#searchBtn:hover {
+#SearchBtn:hover {
   background: rgb(158, 157, 157);
+}
+.Library{
+  margin-top: 5%;
+  
+}
+.Books{
+
+  
+}
+.book{
+  margin-top: 20px;
+  background: #ededed;
 }

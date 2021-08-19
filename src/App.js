@@ -3,14 +3,13 @@ import './App.css';
 import axios from 'axios'
 import Search from './components/Search'
 import Books from './components/Books'
+import Library from './components/library';
 
 
 function App() {
-
   const [book, setBook] = useState("");
   const [apiKey, setApiKey] = useState('process.env.REACT_APP_API_KEY')
   const [apiResponse, setApiResponse] = useState([])
-  //const [title, setTitle] = useState([])
   
 
   const handleChange = event => {
@@ -21,13 +20,13 @@ function App() {
   const handleSubmit = event => {
     event.preventDefault()
     //Change comments to ${book}
-    axios.get(`https://jsonplaceholder.typicode.com/comments/?&_limit=5`)
+    axios.get(`https://jsonplaceholder.typicode.com/photos/?&_limit=5`)
       .then(response => {
         setApiResponse(response.data)
       })
   };   
   
-  //console.log(apiResponse)
+  console.log(apiResponse)
   
   return (
     <div className="App">
@@ -35,11 +34,9 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <Books
-        comment={apiResponse}
+      <Library
+        books={apiResponse}
       />
-        
-        
     </div>
   );
 }
