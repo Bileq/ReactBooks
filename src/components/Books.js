@@ -1,6 +1,7 @@
 import React from 'react'
 import Book from './Book'
 import '../App.css'
+import PropTypes from 'prop-types'
 
 const Books = props => {
     const books = props.books
@@ -16,6 +17,10 @@ const Books = props => {
     )))
 }
    
+Books.PropTypes = {
+    thumbnailUrl: PropTypes.node,
+    title: PropTypes.string
 
+}
 
 export default Books;
