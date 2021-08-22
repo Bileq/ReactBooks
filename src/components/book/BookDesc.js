@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css'
 
-const BookTitle = props => {
+const BookDesc = props => {
     const title = props.title
 
     return (
@@ -9,4 +9,4 @@ const BookTitle = props => {
     )
 }
 
-export default BookTitle;
+export default BookDesc;

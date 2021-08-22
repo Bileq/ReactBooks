@@ -1,16 +1,38 @@
 import React from 'react'
 import '../App.css'
+import BookDesc from './book/BookDesc'
+import BookDimensions from './book/BookDimensions'
 import BookImg from './book/BookImg'
-import BookTitle from './book/BookTitle'
+import BookInfos from './book/BookInfos'
 
 const Book = props => {
-    const img = props.img
+    const id = props.id
+    const albumId = props.albumId
     const title = props.title
+    const img = props.img
+    const url = props.url
+    
 
     return (
         <div className="book">
-            <BookImg img={img} title={title}/>
-            <BookTitle title={title}/>
+            <hr></hr><hr></hr>
+            <BookImg 
+                img={img}
+                title={title}
+            />
+            <hr></hr>
+            <BookInfos 
+                id={id}
+                url={url}
+                title={title}
+            />
+            <hr></hr>
+            <BookDimensions 
+                albumId={albumId} 
+                id={id}
+            />
+            <hr></hr>
+            <BookDesc title={title}/>
         </div>        
     )
 }

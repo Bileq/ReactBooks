@@ -10,8 +10,11 @@ const Books = props => {
         books.map( book => (
             <div className="Books" key={book.id}> 
             <Book 
+                id={book.id}
                 img={book.thumbnailUrl}
                 title={book.title}
+                albumId={book.albumId}
+                url={book.url}
             />
             </div>
     )))
