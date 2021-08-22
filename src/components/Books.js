@@ -8,7 +8,7 @@ const Books = props => {
 
     return (
         books.map( book => (
-            <div className="Books">
+            <div className="Books" key={book.id}> 
             <Book 
                 img={book.thumbnailUrl}
                 title={book.title}
@@ -17,10 +17,10 @@ const Books = props => {
     )))
 }
    
-Books.PropTypes = {
+Books.propTypes = {
     thumbnailUrl: PropTypes.node,
-    title: PropTypes.string
-
+    title: PropTypes.string,
+    id: PropTypes.string,
 }
 
 export default Books;

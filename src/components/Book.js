@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
-import BookImg from './BookImg'
-import BookTitle from './BookTitle'
+import BookImg from './book/BookImg'
+import BookTitle from './book/BookTitle'
 
 const Book = props => {
     const img = props.img
