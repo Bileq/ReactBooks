@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import './App.css';
 import axios from 'axios'
 import Search from './components/Search'
-import Books from './components/Books'
 import Library from './components/library';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -27,7 +26,7 @@ function App() {
       })
   };   
   
-  console.log(apiResponse)
+  //console.log(apiResponse)
   
   return (
     <div className="App">
