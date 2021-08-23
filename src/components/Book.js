@@ -4,6 +4,9 @@ import BookDesc from './book/BookDesc'
 import BookDimensions from './book/BookDimensions'
 import BookImg from './book/BookImg'
 import BookInfos from './book/BookInfos'
+import { Container, Row, Col } from 'react-bootstrap'
+
+
 
 const Book = props => {
     const id = props.id
@@ -14,26 +17,29 @@ const Book = props => {
     
 
     return (
-        <div className="book">
-            <hr></hr><hr></hr>
-            <BookImg 
-                img={img}
-                title={title}
-            />
-            <hr></hr>
-            <BookInfos 
-                id={id}
-                url={url}
-                title={title}
-            />
-            <hr></hr>
-            <BookDimensions 
-                albumId={albumId} 
-                id={id}
-            />
-            <hr></hr>
-            <BookDesc title={title}/>
-        </div>        
+        <>
+        <Container>
+            <div className="book">
+                <BookImg 
+                    img={img}
+                    title={title}
+                />
+                <hr></hr>
+                <BookInfos 
+                    id={id}
+                    url={url}
+                    title={title}
+                />
+                <hr></hr>
+                <BookDimensions 
+                    albumId={albumId} 
+                    id={id}
+                />
+                <hr></hr>
+                <BookDesc title={title}/>
+            </div>
+        </Container>
+        </>  
     )
 }
 

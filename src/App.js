@@ -4,6 +4,7 @@ import axios from 'axios'
 import Search from './components/Search'
 import Books from './components/Books'
 import Library from './components/library';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

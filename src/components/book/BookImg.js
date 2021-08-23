@@ -6,7 +6,10 @@ const BookImg = props => {
     const title = props.title
 
     return (
-        <img src={img} alt={title} />
+        <div className="bookImg">
+            <img src={img} alt={title} />
+        </div>
+        
     )
 }
 
