@@ -17,7 +17,7 @@ const Book = (props) => {
         <>
             <div className="book" style={{ fontSize: 14 }}>
                 <Row>
-                    <Col className="p-5 pe-2">
+                    <Col className="py-5">
                         <BookImg 
                             img={img} 
                             title={title} 
@@ -30,7 +30,7 @@ const Book = (props) => {
                             title={title} 
                         />
                     </Col>
-                    <Col>
+                    <Col className="py-5" lg={4}>
                         <BookDimensions 
                             albumId={albumId} 
                             id={id} 

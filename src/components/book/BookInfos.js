@@ -9,23 +9,23 @@ const BookInfos = (props) => {
     return (
         <>
             <dl className="row">
-                <dt class="col-sm-3">Title:</dt>
-                <dd class="col-sm-9">{title}</dd>
+                <dt className="col-sm-3">Title:</dt>
+                <dd className="col-sm-9">Firefighter</dd>
 
-                <dt class="col-sm-3">Author:</dt>
-                <dd class="col-sm-9">Stephen</dd>
+                <dt className="col-sm-3">Author:</dt>
+                <dd className="col-sm-9">Stephen</dd>
 
-                <dt class="col-sm-3">Publisher:</dt>
-                <dd class="col-sm-9">Lorem Ipsum</dd>
+                <dt className="col-sm-3">Publisher:</dt>
+                <dd className="col-sm-9">Lorem Ipsum</dd>
 
-                <dt class="col-sm-3">Genre: </dt>
-                <dd class="col-sm-9">{url}</dd>
+                <dt className="col-sm-3">Genre: </dt>
+                <dd className="col-sm-9">Horror</dd>
 
-                <dt class="col-sm-3">Pages: </dt>
-                <dd class="col-sm-9">{id}</dd>
+                <dt className="col-sm-3">Pages: </dt>
+                <dd className="col-sm-9">{id}</dd>
 
-                <dt class="col-sm-3">Details </dt>
-                <dd class="col-sm-9">&#8595;</dd>
+                <dt className="col-sm-3">Details </dt>
+                <dd className="col-sm-9">Accordion:&#8595;</dd>
             </dl>
         </>
     );
