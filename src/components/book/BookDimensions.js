@@ -6,20 +6,19 @@ const BookDimensions = (props) => {
     const id = props.id;
 
     return (
-        <div className="container">
+        <div className="container pt-5">
             <div className="row justify-content-center">
-                <div className="col-xl-5 col-md col-7 text-truncate">Height:</div>
-                <div className="col-xl-7 col-md col-5">{albumId}</div>
+                <div className="col col-md-4 text-truncate fw-bold pb-3">Height:</div>
+                <div className="col col-md-8">{albumId}</div>
             </div>
             <div className="row justify-content-center">
-                <div className="col-xl-5 col-md col-7 text-truncate">Width:</div>
-                <div className="col-xl-7 col-md col-5">{albumId}</div>
+                <div className="col col-md-4 text-truncate fw-bold pb-3">Width:</div>
+                <div className="col col-md-8">{albumId}</div>
             </div>
-            <div className="row justify-content-center">
-                <div className="col-xl-5 col-md col-7 text-truncate">Thickness:</div>
-                <div className="col-xl-7 col-md col-5">{id}</div>
+            <div className="row justify-content-center pb-3">
+                <div className="col col-md-4 text-truncate fw-bold">Thickness:</div>
+                <div className="col col-md-8">{id}</div>
             </div>
-
         </div>
     );
 };

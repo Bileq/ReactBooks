@@ -7,27 +7,32 @@ const BookInfos = (props) => {
     const url = props.url;
 
     return (
-        <>
-            <dl className="row">
-                <dt className="col-sm-3">Title:</dt>
-                <dd className="col-sm-9">Firefighter</dd>
-
-                <dt className="col-sm-3">Author:</dt>
-                <dd className="col-sm-9">Stephen</dd>
-
-                <dt className="col-sm-3">Publisher:</dt>
-                <dd className="col-sm-9">Lorem Ipsum</dd>
-
-                <dt className="col-sm-3">Genre: </dt>
-                <dd className="col-sm-9">Horror</dd>
-
-                <dt className="col-sm-3">Pages: </dt>
-                <dd className="col-sm-9">{id}</dd>
-
-                <dt className="col-sm-3">Details </dt>
-                <dd className="col-sm-9">Accordion:&#8595;</dd>
-            </dl>
-        </>
+        <div className="container">
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Title:</div>
+                <div className="col-8">FireStarter</div>
+            </div>
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Author:</div>
+                <div className="col-8">Stephen</div>
+            </div>
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Publisher:</div>
+                <div className="col-8">Lorem Ipsum</div>
+            </div>
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Genre:</div>
+                <div className="col-8">Horror</div>
+            </div>
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Pages:</div>
+                <div className="col-8">{id}</div>
+            </div>
+            <div className="row">
+                <div className="col-4 pb-3 fw-bold">Details:</div>
+                <div className="col-8">Accordion:&#8595;</div>
+            </div>
+        </div>
     );
 };
 

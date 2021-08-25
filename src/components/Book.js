@@ -14,7 +14,7 @@ const Book = (props) => {
     const url = props.url;
 
     return (
-        <div className="container">
+        <div className="container" style={{fontSize: '10px'}}>
             <div className="row py-5">
                 <div className="col-12 col-lg my-5">
                     <BookImg 
@@ -22,14 +22,14 @@ const Book = (props) => {
                         title={title}
                     />
                 </div>
-                <div className="col-12 col-lg mt-5 align-self-center">
+                <div className="col-12 mt-5 col-lg ">
                     <BookInfos 
                         id={id}
                         url={url}
                         title={title}
                     />
                 </div>
-                <div className="col-12 col-lg mt-5">
+                <div className="col-12 col-lg mt-3">
                     <BookDimensions 
                         albumId={albumId}
                         id={id}
