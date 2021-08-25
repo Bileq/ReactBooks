@@ -8,7 +8,7 @@ const BookInfos = (props) => {
 
     return (
         <div className="container">
-            <div className="row">
+            <div className="row pt-2">
                 <div className="col-4 pb-3 fw-bold">Title:</div>
                 <div className="col-8">FireStarter</div>
             </div>

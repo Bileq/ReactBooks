@@ -15,7 +15,7 @@ const Book = (props) => {
 
     return (
         <div className="container" style={{fontSize: '10px'}}>
-            <div className="row py-5">
+            <div className="row pt-5">
                 <div className="col-12 col-lg my-5">
                     <BookImg 
                         img={img}
