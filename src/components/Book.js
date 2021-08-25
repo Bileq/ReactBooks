@@ -14,34 +14,36 @@ const Book = (props) => {
     const url = props.url;
 
     return (
-        <>
-            <div className="book" style={{ fontSize: 14 }}>
-                <Row>
-                    <Col className="py-5">
-                        <BookImg 
-                            img={img} 
-                            title={title} 
-                        />
-                    </Col>
-                    <Col className="pt-5">
-                        <BookInfos 
-                            id={id} 
-                            url={url} 
-                            title={title} 
-                        />
-                    </Col>
-                    <Col className="py-5" lg={4}>
-                        <BookDimensions 
-                            albumId={albumId} 
-                            id={id} 
-                        />
-                    </Col>
-                </Row>
-                <Row className="pt-5">
-                    <BookDesc title={title} />
-                </Row>
+        <div className="container">
+            <div className="row py-5">
+                <div className="col-12 col-lg my-5">
+                    <BookImg 
+                        img={img}
+                        title={title}
+                    />
+                </div>
+                <div className="col-12 col-lg mt-5 align-self-center">
+                    <BookInfos 
+                        id={id}
+                        url={url}
+                        title={title}
+                    />
+                </div>
+                <div className="col-12 col-lg mt-5">
+                    <BookDimensions 
+                        albumId={albumId}
+                        id={id}
+                    />
+                </div>
             </div>
-        </>
+            <div className="row">
+                <div className="col">
+                    <BookDesc 
+                        title={title}
+                    />
+                </div>
+            </div>
+        </div>
     );
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import "../../App.css";
 
 const BookDimensions = (props) => {
@@ -7,33 +6,21 @@ const BookDimensions = (props) => {
     const id = props.id;
 
     return (
-        <dl className="row">
-            <Row className="pt-2">
-                <Col md={{ span: 3, offset: 1 }} xs={{span: 4, offset: 1}}>
-                    <dt>Height:</dt>
-                </Col>
-                <Col md={8} xs={7}>
-                    <dd>{albumId}</dd>
-                </Col>
-            </Row>
-            <Row className="pt-2">
-                <Col md={{ span: 3, offset: 1 }} xs={{span: 4, offset: 1}}>
-                    <dt>Width:</dt>
-                </Col>
-                <Col md={8} xs={7}>
-                    <dd>{albumId}</dd>
-                </Col>
-            </Row>
-            <Row className="pt-2">
-                <Col md={{ span: 3, offset: 1 }} xs={{span: 4, offset: 1}}>
-                    <dt>Thickness:</dt>
-                </Col>
-                <Col md={8} xs={7}>
-                    <dd>{id}</dd>
-                </Col>
-            </Row>
-        </dl>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-xl-5 col-md col-7 text-truncate">Height:</div>
+                <div className="col-xl-7 col-md col-5">{albumId}</div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-xl-5 col-md col-7 text-truncate">Width:</div>
+                <div className="col-xl-7 col-md col-5">{albumId}</div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-xl-5 col-md col-7 text-truncate">Thickness:</div>
+                <div className="col-xl-7 col-md col-5">{id}</div>
+            </div>
 
+        </div>
     );
 };
 
