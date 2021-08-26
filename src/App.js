@@ -20,17 +20,16 @@ function App() {
   const handleSubmit = event => {
     event.preventDefault()
     //Change comments to ${book}
-    axios.get(`https://jsonplaceholder.typicode.com/photos/?&_limit=5`)
+    axios.get(`https://jsonplaceholder.typicode.com/photos/?&_limit=10`)
       .then(response => {
         setApiResponse(response.data)
       })
   };   
   
-  //console.log(apiResponse)
-  
   return (
     <div className="App">
       <Search
+        className=""
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />

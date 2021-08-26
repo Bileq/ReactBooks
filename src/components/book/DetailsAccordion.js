@@ -7,9 +7,9 @@ const DetailsAccordion = (props) => {
     const dataBsTargetId = `#${collapseId}`
 
     return (
-        <div class="accordion accordion-flush" id="details">
-            <div class="accordion-item">
-                <h6 class="accordion-header" id="headingOne">
+        <div className="accordion accordion-flush" id="details">
+            <div className="accordion-item">
+                <h6 className="accordion-header" id="headingOne">
                     <button
                         className="accordion-button 
                         collapsed fw-bold ps-0 
@@ -31,7 +31,7 @@ const DetailsAccordion = (props) => {
                     aria-labelledby="headingOne"
                     data-bs-parent="#details"
                 >
-                    <div class="accordion-body text-justify-start p-0">
+                    <div className="accordion-body text-justify-start p-0">
                         <div className="container" >
                             <div className="row pt-3">
                                 <div className="col fw-bold">Publisher:</div>
@@ -59,7 +59,7 @@ const DetailsAccordion = (props) => {
                                     <a
                                     //Change title to {title}
                                     href="http://books.google.pl/books?id=ZfFwDwAAQBAJ&pg=PT4&dq=firestarter&hl=&cd=1&source=gbs_api"
-                                    class="link-primary">FireStarter
+                                    className="link-primary">FireStarter
                                     </a>
                                 </div>
                             </div>
