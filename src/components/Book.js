@@ -4,7 +4,7 @@ import BookDesc from "./book/BookDesc";
 import BookDimensions from "./book/BookDimensions";
 import BookImg from "./book/BookImg";
 import BookInfos from "./book/BookInfos";
-import { Row, Col } from "react-bootstrap";
+import DetailsAccordion from "./book/DetailsAccordion";
 
 const Book = (props) => {
     const id = props.id;
@@ -34,6 +34,11 @@ const Book = (props) => {
                         albumId={albumId}
                         id={id}
                     />
+                </div>
+            </div>
+            <div className="row justify-content-md-center pb-5 ">
+                <div className="col-md-8 col-12 pt-3 pt-md-0">
+                    <DetailsAccordion id={id}/>
                 </div>
             </div>
             <div className="row">

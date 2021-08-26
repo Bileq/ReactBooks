@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import DetailsAccordion from "./DetailsAccordion";
 
 const BookInfos = (props) => {
     const title = props.title;
@@ -28,10 +29,12 @@ const BookInfos = (props) => {
                 <div className="col-4 pb-3 fw-bold">Pages:</div>
                 <div className="col-8">{id}</div>
             </div>
-            <div className="row">
-                <div className="col-4 pb-3 fw-bold">Details:</div>
-                <div className="col-8">Accordion:&#8595;</div>
-            </div>
+            {/* <div className="row">
+                <div className="col col-md-8">
+                    
+                </div>
+            </div> */}
+            
         </div>
     );
 };

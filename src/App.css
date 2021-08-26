@@ -2,9 +2,6 @@
   background: white;
   color: black;
 }
-::root {
-  --font-weight: 700
-}
 .App {
   margin-left: auto;
   margin-right: auto;
