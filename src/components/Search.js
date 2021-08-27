@@ -1,6 +1,7 @@
 import React from "react";
-import "../App.css"
+import "../App.css";
 
+//check background import in app.js
 
 const Search = (props) => {
     const handleChange = props.handleChange;
@@ -8,44 +9,28 @@ const Search = (props) => {
 
     return (
         <div className="container">
-            <form onSubmit={handleSubmit} className="row justify-content-center">
+            <form
+                onSubmit={handleSubmit}
+                className="row justify-content-center "
+            >
                 <div className="col-auto">
                     <input
                         onChange={handleChange}
-                        className="form-control border-0 border-bottom border-dark border-3 rounded-1"
+                        className="form-control border-0
+                                border-bottom border-dark rounded-1
+                                border border-3"
                         type="text"
                         placeholder="Search..."
                         aria-label="Search button"
                     />
                 </div>
-                <div className="col-auto">
-                    <button className="search btn btn-warning" type="submit">
+                <div className="col-auto pt-md-0 pt-5">
+                    <button className="btn btn-warning" type="submit">
                         Search
                     </button>
                 </div>
             </form>
         </div>
-        // </div>
-        // <div className="container">
-        //     <form className="row" onSubmit={handleSubmit}>
-        //         <div className="col-auto">
-        //             <input
-        //                 onChange={handleChange}
-        //                 className="form-control"
-        //                 type="text"
-        //                 placeholder="Search..."
-        //                 aria-label="Search button"
-        //             />
-        //         </div>
-        //         <div className="col">
-        //             <div className="col-auto">
-        //                 <button className="btn btn-success ms-5" type="submit">
-        //                     Search
-        //                 </button>
-        //             </div>
-        //         </div>
-        //     </form>
-        // </div>
     );
 };
 
