@@ -1,33 +1,10 @@
-* {
+.App {
   background: white;
   color: black;
 }
-.App {
+.bookApp {
   margin-left: auto;
   margin-right: auto;
   padding-top: 5%;
   width: 60%;
-}
-.Search {
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-}
-#SearchInput {
-  border: none;
-  border-bottom: .5px black solid;
-  font-size: 20px;
-}
-#SearchInput:focus {
-  outline: none;
-}
-#SearchBtn {
-  border-radius: 5px;
-  border: 1px black solid;
-  font-size: 20px;
-  margin-left: 10px;
-  
-}
-#SearchBtn:hover {
-  background: rgb(158, 157, 157);
 }
