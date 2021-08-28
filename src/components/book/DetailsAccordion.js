@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const DetailsAccordion = (props) => {
+const DetailsAccordion = props => {
     const id = props.id
     const collapseId = `collapse${id}`
     const dataBsTargetId = `#${collapseId}`

@@ -6,7 +6,7 @@ const Library = props => {
     const books = props.books
 
     return (
-        <div className="Library pt-5">
+        <div className="Library">
             <Books books={books} />
         </div>
     )

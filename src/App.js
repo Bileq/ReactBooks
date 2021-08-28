@@ -4,7 +4,6 @@ import axios from "axios";
 import Search from "./components/Search";
 import Library from "./components/library";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import background from "./media/library.jpg";
 
 function App() {
     const [book, setBook] = useState("");
@@ -28,11 +27,11 @@ function App() {
 
     return (
         <div className="App">
+            <Search 
+            handleChange={handleChange} 
+            handleSubmit={handleSubmit} 
+            />
             <div className="bookApp">
-                <Search
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                />
                 <Library books={apiResponse} />
             </div>
         </div>

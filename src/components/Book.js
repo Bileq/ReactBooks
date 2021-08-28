@@ -6,7 +6,7 @@ import BookImg from "./book/BookImg";
 import BookInfos from "./book/BookInfos";
 import DetailsAccordion from "./book/DetailsAccordion";
 
-const Book = (props) => {
+const Book = props => {
     const id = props.id;
     const albumId = props.albumId;
     const title = props.title;

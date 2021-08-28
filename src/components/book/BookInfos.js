@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const BookInfos = (props) => {
+const BookInfos = props => {
     const title = props.title;
     const id = props.id;
     const url = props.url;

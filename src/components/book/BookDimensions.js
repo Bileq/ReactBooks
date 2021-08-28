@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const BookDimensions = (props) => {
+const BookDimensions = props => {
     const albumId = props.albumId;
     const id = props.id;
 

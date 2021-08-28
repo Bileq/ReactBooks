@@ -8,7 +8,7 @@ const Books = props => {
 
     return (
         books.map( book => (
-            <div className="Books mt-5" key={book.id}> 
+            <div className="Books" key={book.id}> 
             <Book 
                 id={book.id}
                 img={book.thumbnailUrl}
