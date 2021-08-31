@@ -7,7 +7,7 @@ const BookDesc = props => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <div className="col-12 col-md-7 mt-md-0 mt-5 text-start text-md-center">
+                <div className="col-12 col-md-7 mt-md-0 mt-5 text-start text-md-justify text fs-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Cras dapibus nulla a metus mollis, vitae consectetur enim dapibus. 
                 Vestibulum tempor ligula et purus laoreet euismod. Integer aliquam maximus metus,

@@ -14,7 +14,7 @@ const Book = props => {
     const url = props.url;
 
     return (
-        <div className="container" style={{fontSize: '10px'}}>
+        <div className="container" style={{fontSize: '10px', height: '100vh',}}>
             <div className="row pt-5">
                 <div className="col-12 col-lg my-5">
                     <BookImg 

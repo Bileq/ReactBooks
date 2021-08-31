@@ -14,7 +14,7 @@ const DetailsAccordion = props => {
                         className="accordion-button 
                         collapsed fw-bold ps-0 
                         pe-4 pe-md-5 ps-4 justify-content-center 
-                        bg-warning text-black rounded"
+                        bg-info text-black rounded"
                         style={{ fontSize: 10 }}
                         type="button"
                         data-bs-toggle="collapse"
@@ -32,7 +32,7 @@ const DetailsAccordion = props => {
                     data-bs-parent="#details"
                 >
                     <div className="accordion-body text-justify-start p-0">
-                        <div className="container" >
+                        <div className="container accordionBody">
                             <div className="row pt-3">
                                 <div className="col fw-bold">Publisher:</div>
                                 <div className="col">Simon and Linus</div>

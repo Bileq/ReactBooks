@@ -1,18 +1,58 @@
 .App {
-  background: #000000;
-  color: #B39300;
+  background: #222831;
+  color: #fff;
   min-height: 100vh;
+  height: 100%;
+  /* font-family: ; */
 }
 .bookApp {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5%;
   width: 60%;
+  background: #393E46;
 }
-.header-wrapper {
+.HeaderWrapper {
   position: relative;
-  background: url(media/library.jpg) no-repeat;
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(media/library.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 70vh;
 }
+.accordionBody {
+  background: #393E46;
+}
+.accordion-header {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #393E46;
+}
+.header {
+  font-size: 66px;
+  background: none;
+  width: 100%;
+  padding-top: 45px;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+
+/*
+9th bottom
+8th top
+7th top and center and bottom, paddingRight of the headerWrapper 20%
+6th out ???
+5th top,white
+4th out 
+3th out
+2th not existence
+1th 
+
+*/
+
+
+/*
+first - background
+second - bookApp,accordionBody
+third - Buttons(detailsAccordionBtn, searchBtn)
+fourth - tex
+
+*/

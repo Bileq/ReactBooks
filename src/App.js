@@ -4,6 +4,7 @@ import axios from "axios";
 import Search from "./components/Search";
 import Library from "./components/library";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./components/Header";
 
 function App() {
     const [book, setBook] = useState("");
@@ -27,10 +28,15 @@ function App() {
 
     return (
         <div className="App">
-            <Search 
-            handleChange={handleChange} 
-            handleSubmit={handleSubmit} 
-            />
+            <div className="HeaderWrapper"
+            // style={{paddingRight: "20%"}}
+            >
+            <Header />
+                <Search
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                />
+            </div>
             <div className="bookApp">
                 <Library books={apiResponse} />
             </div>
