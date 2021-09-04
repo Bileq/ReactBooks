@@ -5,32 +5,42 @@ import Search from "./components/Search";
 import Library from "./components/library";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
+import Pagination from "./components/Pagination";
 
 function App() {
     const [book, setBook] = useState("");
     const [apiKey, setApiKey] = useState("process.env.REACT_APP_API_KEY");
     const [apiResponse, setApiResponse] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10);
+    const [loading, setLoading] = useState(false);
 
-    const handleChange = (event) => {
+    const handleChange = event => {
         const book = event.target.value;
         setBook(book);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = event => {
         event.preventDefault();
         //Change comments to ${book}
-        axios
-            .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=10`)
-            .then((response) => {
-                setApiResponse(response.data);
-            });
+        // axios
+        //     .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=20`)
+        //     .then((response) => {
+        //         setApiResponse(response.data);
+        //     });
+        const fetchApiResponse = async () => {
+            setLoading(true)
+            const response = await axios
+                .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=20`)
+            setApiResponse(response.data)
+            setLoading(false)
+            }
+        fetchApiResponse()
     };
 
     return (
         <div className="App">
-            <div className="HeaderWrapper"
-            // style={{paddingRight: "20%"}}
-            >
+            <div className="HeaderWrapper">
             <Header />
                 <Search
                     handleChange={handleChange}
@@ -39,6 +49,7 @@ function App() {
             </div>
             <div className="bookApp">
                 <Library books={apiResponse} />
+                <Pagination />
             </div>
         </div>
     );
