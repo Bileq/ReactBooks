@@ -25,7 +25,7 @@ function App() {
         //Change comments to ${book}
         const response = await axios
             .get(`https://jsonplaceholder.typicode.com/photos?&_limit=100`)
-            //.catch(() => document.write("Something went wrong"));
+            .catch(() => document.write("Something went wrong"));
         setApiResponse(response.data);
         setLoading(false);
     };
