@@ -23,21 +23,15 @@ function App() {
     const handleSubmit = event => {
         event.preventDefault();
         //Change comments to ${book}
-        // axios
-        //     .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=20`)
-        //     .then((response) => {
-        //         setApiResponse(response.data);
-        //     });
         const fetchApiResponse = async () => {
             setLoading(true)
             const response = await axios
-                .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=20`)
+                .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=10`)
             setApiResponse(response.data)
             setLoading(false)
             }
         fetchApiResponse()
     };
-
     return (
         <div className="App">
             <div className="HeaderWrapper">
@@ -48,7 +42,7 @@ function App() {
                 />
             </div>
             <div className="bookApp">
-                <Library books={apiResponse} />
+                <Library books={apiResponse} loading={loading}/>
                 <Pagination />
             </div>
         </div>

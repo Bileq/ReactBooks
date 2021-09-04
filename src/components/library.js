@@ -2,12 +2,10 @@ import React from 'react'
 import Books from './Books'
 import '../App.css'
 
-const Library = props => {
-    const books = props.books
-
+const Library = ({books, loading}) => {
     return (
         <div className="Library">
-            <Books books={books} />
+            <Books books={books} loading={loading}/>
         </div>
     )
 }
