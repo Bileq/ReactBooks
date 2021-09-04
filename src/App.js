@@ -9,41 +9,58 @@ import Pagination from "./components/Pagination";
 
 function App() {
     const [book, setBook] = useState("");
-    const [apiKey, setApiKey] = useState("process.env.REACT_APP_API_KEY");
+    const [apiKey] = useState("process.env.REACT_APP_API_KEY");
     const [apiResponse, setApiResponse] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(10);
+    const [booksPerPage] = useState(10);
     const [loading, setLoading] = useState(false);
 
-    const handleChange = event => {
+    const handleChange = (event) => {
         const book = event.target.value;
         setBook(book);
     };
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const fetchApiResponse = async () => {
+        setLoading(true);
         //Change comments to ${book}
-        const fetchApiResponse = async () => {
-            setLoading(true)
-            const response = await axios
-                .get(`https://jsonplaceholder.typicode.com/photos/?&_limit=10`)
-            setApiResponse(response.data)
-            setLoading(false)
-            }
-        fetchApiResponse()
+        const response = await axios
+            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=100`)
+            //.catch(() => document.write("Something went wrong"));
+        setApiResponse(response.data);
+        setLoading(false);
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetchApiResponse();
+    };
+
+    //Change page
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    //Get current Books
+
+    const indexOfLastBook = currentPage * booksPerPage;
+    const indexOfFirstBook = indexOfLastBook - booksPerPage;
+    const currentBooks = apiResponse.slice(indexOfFirstBook, indexOfLastBook);
+
     return (
         <div className="App">
             <div className="HeaderWrapper">
-            <Header />
+                <Header />
                 <Search
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                 />
             </div>
             <div className="bookApp">
-                <Library books={apiResponse} loading={loading}/>
-                <Pagination />
+                <Library books={currentBooks} loading={loading} />
+                <Pagination
+                    booksPerPage={booksPerPage}
+                    totalBooks={apiResponse.length}
+                    paginate={paginate}
+                />
             </div>
         </div>
     );

@@ -6,13 +6,18 @@ import PropTypes from "prop-types";
 const Books = ({ books, loading }) => {
     if (loading) {
         return (
-            <div class="text-center">
+            <div className="text-center">
                 <div
-                    class="spinner-border text-primary"
+                    className="spinner-border text-primary"
                     role="status"
-                    style={{ width: "80px", height: "80px", marginTop: "5%" }}
+                    style={{
+                        width: "80px",
+                        height: "80px",
+                        marginTop: "8%",
+                        marginBottom: "7%",
+                    }}
                 >
-                    <span class="sr-only"></span>
+                    <span className="sr-only"></span>
                 </div>
             </div>
         );
