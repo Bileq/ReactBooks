@@ -10,12 +10,12 @@ const Pagination = ({ booksPerPage, totalBooks, paginate }) => {
 
     return (
         <nav>
-            <ul className="pagination">
+            <ul className="pagination" onLoad={() => paginate(1)}>
                 {pageNumbers.map((number) => (
                     <li key={number} className="page-item">
                         <a
                             onClick={() => paginate(number)}
-                            href="!#"
+                            href
                             className="page-link"
                         >
                             {number}

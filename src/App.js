@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState} from "react";
 import "./App.css";
 import axios from "axios";
 import Search from "./components/Search";
@@ -12,19 +12,18 @@ function App() {
     const [apiKey] = useState("process.env.REACT_APP_API_KEY");
     const [apiResponse, setApiResponse] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [booksPerPage] = useState(10);
+    const [booksPerPage] = useState(2);
     const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         const book = event.target.value;
         setBook(book);
     };
-
     const fetchApiResponse = async () => {
         setLoading(true);
         //Change comments to ${book}
         const response = await axios
-            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=100`)
+            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=10`)
             .catch(() => document.write("Something went wrong"));
         setApiResponse(response.data);
         setLoading(false);
@@ -34,6 +33,12 @@ function App() {
         event.preventDefault();
         fetchApiResponse();
     };
+
+    //Scroll to the top if page has been changed
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[currentPage])
 
     //Change page
 

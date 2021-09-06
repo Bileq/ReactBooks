@@ -3,7 +3,6 @@
   color: #fff;
   min-height: 100vh;
   height: 100%;
-  /* font-family: ; */
 }
 .bookApp {
   margin-left: auto;
@@ -34,25 +33,3 @@
   color: white;
   -webkit-text-stroke: 2px black;
 }
-
-/*
-9th bottom
-8th top
-7th top and center and bottom, paddingRight of the headerWrapper 20%
-6th out ???
-5th top,white
-4th out 
-3th out
-2th not existence
-1th 
-
-*/
-
-
-/*
-first - background
-second - bookApp,accordionBody
-third - Buttons(detailsAccordionBtn, searchBtn)
-fourth - tex
-
-*/
