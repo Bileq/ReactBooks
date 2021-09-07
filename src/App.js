@@ -36,9 +36,9 @@ function App() {
 
     //Scroll to the top if page has been changed
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [currentPage]);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [currentPage]);
 
     //Change page
 
