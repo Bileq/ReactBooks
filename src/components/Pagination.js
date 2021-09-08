@@ -23,6 +23,18 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
     return (
         <nav>
             <ul className="pagination justify-content-center mt-5 pb-5 mb-0">
+            {/* First button */}
+            <li className="page-item arrows">
+                    <a
+                        onClick={() => paginate(pageNumbers[0])}
+                        href
+                        className="page-link btn border-0"
+                        aria-label="first"
+                        style={{ background: "#393E46" }}
+                    >
+                        <span aria-hidden="true">First</span>
+                    </a>
+                </li>
                 {/* Previous button */}
                 <li className="page-item arrows">
                     <a
@@ -32,7 +44,7 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                         aria-label="Previous"
                         style={{ background: "#393E46" }}
                     >
-                        <span aria-hidden="true">Previous</span>
+                        <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 {pageNumbers.map((number) => {
@@ -72,7 +84,19 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                         aria-label="Next"
                         style={{ background: "#393E46" }}
                     >
-                        <span aria-hidden="true">Next</span>
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {/* Last button */}
+                <li className="page-item arrows">
+                    <a
+                        onClick={() => paginate(pageNumbers.length)}
+                        href
+                        className="page-link btn border-0"
+                        aria-label="last"
+                        style={{ background: "#393E46" }}
+                    >
+                        <span aria-hidden="true">Last</span>
                     </a>
                 </li>
             </ul>
