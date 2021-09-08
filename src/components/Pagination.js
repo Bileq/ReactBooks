@@ -22,17 +22,17 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
 
     return (
         <nav>
-            <ul className="pagination justify-content-center pagination mt-5 mb-0">
+            <ul className="pagination justify-content-center mt-5 pb-5 mb-0">
                 {/* Previous button */}
                 <li className="page-item arrows">
                     <a
                         onClick={() => paginate(currentPage - 1)}
                         href
-                        className="page-link border-0"
+                        className="page-link btn border-0"
                         aria-label="Previous"
                         style={{ background: "#393E46" }}
                     >
-                        <span aria-hidden="true">&laquo;</span>
+                        <span aria-hidden="true">Previous</span>
                     </a>
                 </li>
                 {pageNumbers.map((number) => {
@@ -68,11 +68,11 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                     <a
                         onClick={() => paginate(currentPage + 1)}
                         href
-                        className="page-link border-0"
+                        className="page-link btn border-0"
                         aria-label="Next"
                         style={{ background: "#393E46" }}
                     >
-                        <span aria-hidden="true">&raquo;</span>
+                        <span aria-hidden="true">Next</span>
                     </a>
                 </li>
             </ul>

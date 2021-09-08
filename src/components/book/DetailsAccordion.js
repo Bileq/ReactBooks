@@ -1,10 +1,9 @@
 import React from "react";
 import "../../App.css";
 
-const DetailsAccordion = props => {
-    const id = props.id
-    const collapseId = `collapse${id}`
-    const dataBsTargetId = `#${collapseId}`
+const DetailsAccordion = ({ id }) => {
+    const collapseId = `collapse${id}`;
+    const dataBsTargetId = `#${collapseId}`;
 
     return (
         <div className="accordion accordion-flush" id="details">
@@ -38,7 +37,9 @@ const DetailsAccordion = props => {
                                 <div className="col">Simon and Linus</div>
                             </div>
                             <div className="row">
-                                <div className="col text-truncate fw-bold">Published Date:</div>
+                                <div className="col text-truncate fw-bold">
+                                    Published Date:
+                                </div>
                                 <div className="col">2019-01-15</div>
                             </div>
                             <div className="row">
@@ -51,15 +52,19 @@ const DetailsAccordion = props => {
                             </div>
                             <div className="row">
                                 <div className="col fw-bold">ISBN:</div>
-                                <div className="col text-truncate">1234567890123</div>
+                                <div className="col text-truncate">
+                                    1234567890123
+                                </div>
                             </div>
-                            <div className="row justify-content-center"> 
+                            <div className="row justify-content-center">
                                 <div className="col fw-bold">Preview link:</div>
                                 <div className="col">
                                     <a
-                                    //Change title to {title}
-                                    href="http://books.google.pl/books?id=ZfFwDwAAQBAJ&pg=PT4&dq=firestarter&hl=&cd=1&source=gbs_api"
-                                    className="link-primary">FireStarter
+                                        //Change title to {title}
+                                        href="http://books.google.pl/books?id=ZfFwDwAAQBAJ&pg=PT4&dq=firestarter&hl=&cd=1&source=gbs_api"
+                                        className="link-primary"
+                                    >
+                                        FireStarter
                                     </a>
                                 </div>
                             </div>

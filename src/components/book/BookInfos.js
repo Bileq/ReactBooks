@@ -1,11 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const BookInfos = props => {
-    const title = props.title;
-    const id = props.id;
-    const url = props.url;
-
+const BookInfos = ({ title, id, url }) => {
     return (
         <div className="container">
             <div className="row pt-2">

@@ -1,9 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const BookDesc = (props) => {
-    const title = props.title;
-
+const BookDesc = ({ title }) => {
     return (
         <div className="container">
             <div className="row justify-content-center">

@@ -12,7 +12,7 @@ function App() {
     const [apiKey] = useState("process.env.REACT_APP_API_KEY");
     const [apiResponse, setApiResponse] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [booksPerPage] = useState(1);
+    const [booksPerPage] = useState(2);
     const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
@@ -23,7 +23,7 @@ function App() {
         setLoading(true);
         //Change comments to ${book}
         const response = await axios
-            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=30`)
+            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=5`)
             .catch(() => document.write("Something went wrong"));
         setApiResponse(response.data);
         setLoading(false);
@@ -36,9 +36,9 @@ function App() {
 
     //Scroll to the top if page has been changed
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, [currentPage]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentPage]);
 
     //Change page
 
@@ -61,13 +61,13 @@ function App() {
             </div>
             <div className="bookApp">
                 <Library books={currentBooks} loading={loading} />
-                <Pagination
-                    booksPerPage={booksPerPage}
-                    totalBooks={apiResponse.length}
-                    paginate={paginate}
-                    currentPage={currentPage}
-                />
             </div>
+            <Pagination
+                booksPerPage={booksPerPage}
+                totalBooks={apiResponse.length}
+                paginate={paginate}
+                currentPage={currentPage}
+            />
         </div>
     );
 }
