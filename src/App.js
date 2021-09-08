@@ -14,6 +14,7 @@ function App() {
     const [currentPage, setCurrentPage] = useState(1);
     const [booksPerPage] = useState(10);
     const [loading, setLoading] = useState(false);
+    const [paginationVisible, setPaginationVisible] = useState(false);
 
     const handleChange = (event) => {
         const book = event.target.value;
@@ -32,6 +33,7 @@ function App() {
     const handleSubmit = (event) => {
         event.preventDefault();
         fetchApiResponse();
+        setPaginationVisible(true);
     };
 
     //Scroll to the top if page has been changed
@@ -62,12 +64,14 @@ function App() {
             <div className="bookApp">
                 <Library books={currentBooks} loading={loading} />
             </div>
-            <Pagination
-                booksPerPage={booksPerPage}
-                totalBooks={apiResponse.length}
-                paginate={paginate}
-                currentPage={currentPage}
-            />
+            {paginationVisible === true ? (
+                <Pagination
+                    booksPerPage={booksPerPage}
+                    totalBooks={apiResponse.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                />
+            ) : null}
         </div>
     );
 }

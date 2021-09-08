@@ -23,8 +23,8 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
     return (
         <nav>
             <ul className="pagination justify-content-center mt-5 pb-5 mb-0">
-            {/* First button */}
-            <li className="page-item arrows">
+                {/* First button */}
+                <li className="page-item arrows">
                     <a
                         onClick={() => paginate(pageNumbers[0])}
                         href
