@@ -26,7 +26,7 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                 {/* First button */}
                 <li className="page-item arrows">
                     <a
-                        onClick={() => paginate(pageNumbers[0])}
+                        onClick={() => paginate(1)}
                         href
                         className="page-link btn border-0"
                         aria-label="first"
@@ -38,7 +38,11 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                 {/* Previous button */}
                 <li className="page-item arrows">
                     <a
-                        onClick={() => paginate(currentPage - 1)}
+                        onClick={() =>
+                            currentPage === 1
+                                ? paginate(1)
+                                : paginate(currentPage - 1)
+                        }
                         href
                         className="page-link btn border-0"
                         aria-label="Previous"
@@ -78,7 +82,11 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                 {/* Next button */}
                 <li className="page-item arrows">
                     <a
-                        onClick={() => paginate(currentPage + 1)}
+                        onClick={() =>
+                            currentPage === pageNumbers.length
+                                ? paginate(currentPage)
+                                : paginate(currentPage + 1)
+                        }
                         href
                         className="page-link btn border-0"
                         aria-label="Next"
