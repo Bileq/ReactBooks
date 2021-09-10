@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Pagination from "./components/Pagination";
 import ResultsNotFound from "./components/ResultsNotFound";
-require('dotenv').config();
+require("dotenv").config();
 
 function App() {
     const [book, setBook] = useState("");
@@ -27,10 +27,12 @@ function App() {
         setLoading(true);
         //Change comments to ${book}
         const response = await axios
-            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=${book}`)
+            .get(
+                `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`
+            )
             .catch(() => document.write("Something went wrong"));
         setLoading(false);
-        setApiResponse(response.data);
+        setApiResponse(response.data.items);
     };
 
     const handleSubmit = (event) => {
@@ -41,8 +43,8 @@ function App() {
     //Make pagination invisible on page load and handleChange re-renders
 
     useEffect(() => {
-        setPaginationVisible(false)
-    },[book])
+        setPaginationVisible(false);
+    }, [book]);
 
     //set zeroResults
 
@@ -51,7 +53,7 @@ function App() {
     useEffect(() => {
         isInitialMount.current
             ? (isInitialMount.current = false)
-            : setZeroResults(apiResponse.length <= 0)
+            : setZeroResults(apiResponse.length <= 0);
     }, [apiResponse]);
 
     //Scroll to the top if page has been changed
@@ -88,9 +90,7 @@ function App() {
                     />
                 </div>
             ) : (
-                <ResultsNotFound
-                    setPaginationVisible={setPaginationVisible}
-                />
+                <ResultsNotFound setPaginationVisible={setPaginationVisible} />
             )}
             {paginationVisible === true ? (
                 <Pagination

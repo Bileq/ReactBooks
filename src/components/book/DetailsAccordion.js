@@ -1,9 +1,22 @@
 import React from "react";
 import "../../App.css";
 
-const DetailsAccordion = ({ id }) => {
+const DetailsAccordion = ({
+    id,
+    publisher,
+    publishedDate,
+    lang,
+    pages,
+    isbn,
+    previewLink,
+    title,
+}) => {
     const collapseId = `collapse${id}`;
     const dataBsTargetId = `#${collapseId}`;
+    let isbnNumber = ""
+
+    typeof isbn === "undefined" ? isbnNumber = ""
+    : isbnNumber= isbn[0].identifier
 
     return (
         <div className="accordion accordion-flush" id="details">
@@ -34,37 +47,39 @@ const DetailsAccordion = ({ id }) => {
                         <div className="container accordionBody">
                             <div className="row pt-3">
                                 <div className="col fw-bold">Publisher:</div>
-                                <div className="col">Simon and Linus</div>
+                                <div className="col">{publisher}</div>
                             </div>
                             <div className="row">
                                 <div className="col text-truncate fw-bold">
                                     Published Date:
                                 </div>
-                                <div className="col">2019-01-15</div>
+                                <div className="col">{publishedDate}</div>
                             </div>
                             <div className="row">
                                 <div className="col fw-bold">Language:</div>
-                                <div className="col">en</div>
+                                <div
+                                    className="col"
+                                    style={{ textTransform: "uppercase" }}
+                                >
+                                    {lang}
+                                </div>
                             </div>
                             <div className="row">
                                 <div className="col fw-bold">Pages:</div>
-                                <div className="col">528</div>
+                                <div className="col">{pages}</div>
                             </div>
                             <div className="row">
                                 <div className="col fw-bold">ISBN:</div>
-                                <div className="col text-truncate">
-                                    1234567890123
-                                </div>
+                                <div className="col text-truncate">{isbnNumber}</div>
                             </div>
                             <div className="row justify-content-center">
                                 <div className="col fw-bold">Preview link:</div>
                                 <div className="col">
                                     <a
-                                        //Change title to {title}
-                                        href="http://books.google.pl/books?id=ZfFwDwAAQBAJ&pg=PT4&dq=firestarter&hl=&cd=1&source=gbs_api"
+                                        href={previewLink}
                                         className="link-primary"
                                     >
-                                        FireStarter
+                                        {title}
                                     </a>
                                 </div>
                             </div>

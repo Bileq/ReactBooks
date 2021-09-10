@@ -22,15 +22,27 @@ const Books = ({ books, loading }) => {
             </div>
         );
     }
-
     return books.map((book) => (
         <div className="books" key={book.id}>
             <Book
+                url={book.volumeInfo.imageLinks}
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+                publisher={book.volumeInfo.publisher}
+                genre={book.volumeInfo.categories}
+                pages={book.volumeInfo.pageCount}
                 id={book.id}
-                img={book.thumbnailUrl}
-                title={book.title}
-                albumId={book.albumId}
-                url={book.url}
+
+                // height={book}
+                // width={book}
+                // thickness={book}
+                
+                publishedDate={book.volumeInfo.publishedDate}
+                lang={book.volumeInfo.language}
+                isbn={book.volumeInfo.industryIdentifiers}
+                previewLink={book.volumeInfo.previewLink}
+
+                description={book.volumeInfo.description}
             />
         </div>
     ));

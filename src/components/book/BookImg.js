@@ -1,10 +1,16 @@
 import React from "react";
 import "../../App.css";
+import placeholder from "../../media/placeholder.png";
 
-const BookImg = ({ img, title }) => {
+const BookImg = ({ url, title }) => {
+    let imageSrc = "";
+
+    typeof url === "undefined"
+        ? (imageSrc = placeholder)
+        : (imageSrc = url.thumbnail);
     return (
         <img
-            src={img}
+            src={imageSrc}
             alt={title}
             width={128}
             height={192}
