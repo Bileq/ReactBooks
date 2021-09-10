@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import axios from "axios";
 import Search from "./components/Search";
@@ -6,6 +6,7 @@ import Library from "./components/library";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Pagination from "./components/Pagination";
+import ResultsNotFound from "./components/ResultsNotFound";
 
 function App() {
     const [book, setBook] = useState("");
@@ -15,6 +16,7 @@ function App() {
     const [booksPerPage] = useState(10);
     const [loading, setLoading] = useState(false);
     const [paginationVisible, setPaginationVisible] = useState(false);
+    const [zeroResults, setZeroResults] = useState(false);
 
     const handleChange = (event) => {
         const book = event.target.value;
@@ -24,17 +26,32 @@ function App() {
         setLoading(true);
         //Change comments to ${book}
         const response = await axios
-            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=200`)
+            .get(`https://jsonplaceholder.typicode.com/photos?&_limit=${book}`)
             .catch(() => document.write("Something went wrong"));
-        setApiResponse(response.data);
         setLoading(false);
+        setApiResponse(response.data);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         fetchApiResponse();
-        setPaginationVisible(true);
     };
+
+    //Make pagination invisible on page load and handleChange re-renders
+
+    useEffect(() => {
+        setPaginationVisible(false)
+    },[book])
+
+    //set zeroResults
+
+    const isInitialMount = useRef(true);
+
+    useEffect(() => {
+        isInitialMount.current
+            ? (isInitialMount.current = false)
+            : setZeroResults(apiResponse.length <= 0)
+    }, [apiResponse]);
 
     //Scroll to the top if page has been changed
 
@@ -61,9 +78,19 @@ function App() {
                     handleSubmit={handleSubmit}
                 />
             </div>
-            <div className="bookApp">
-                <Library books={currentBooks} loading={loading} />
-            </div>
+            {zeroResults === false ? (
+                <div className="bookApp">
+                    <Library
+                        books={currentBooks}
+                        loading={loading}
+                        setPaginationVisible={setPaginationVisible}
+                    />
+                </div>
+            ) : (
+                <ResultsNotFound
+                    setPaginationVisible={setPaginationVisible}
+                />
+            )}
             {paginationVisible === true ? (
                 <Pagination
                     booksPerPage={booksPerPage}
