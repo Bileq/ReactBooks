@@ -7,10 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Pagination from "./components/Pagination";
 import ResultsNotFound from "./components/ResultsNotFound";
+require('dotenv').config();
 
 function App() {
     const [book, setBook] = useState("");
-    const [apiKey] = useState("process.env.REACT_APP_API_KEY");
+    const [apiKey] = useState(process.env.REACT_APP_API_KEY);
     const [apiResponse, setApiResponse] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [booksPerPage] = useState(10);
