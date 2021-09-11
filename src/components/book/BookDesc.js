@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import ReadMoreReact from "read-more-react";
 
 const BookDesc = ({ description }) => {
     return (
@@ -9,7 +10,17 @@ const BookDesc = ({ description }) => {
                     className="col-12 col-md-7 mt-md-0 mt-5 text-start 
                 text-md-justify text fs-6 pb-2"
                 >
-                    {description}
+                    <div>
+                        <ReadMoreReact
+                            text={description}
+                            min={400}
+                            ideal={500}
+                            max={600}
+                            readMoreText={
+                                <div className="text-info fs-6">Read More</div>
+                            }
+                        />
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,10 +3,10 @@ import Books from "./Books";
 import "../App.css";
 
 const Library = ({ books, loading, setPaginationVisible }) => {
-    setPaginationVisible(true)
+    setPaginationVisible(true);
     return (
         <div className="library">
-            <Books books={books} loading={loading} />
+            <Books books={books} loading={loading}/>
         </div>
     );
 };
