@@ -22,6 +22,6 @@ find books and info about it.
 To see this project, visit this site [BookFinder](https://react-books-finder-by-bileq.herokuapp.com/)
 
 ## Gallery
-![Header](./src/media/readmeMedia/Header.png)
-![Book](./src/media/readmeMedia/Book.png)
-![Details](./src/media/readmeMedia/Details.png)
+![Header](https://raw.githubusercontent.com/Bileq/ReactBooks/main/src/media/readmeMedia/Header.PNG?raw=true)
+![Book](https://raw.githubusercontent.com/Bileq/ReactBooks/main/src/media/readmeMedia/Book.PNG?raw=true)
+![Details](https://raw.githubusercontent.com/Bileq/ReactBooks/main/src/media/readmeMedia/Details.PNG?raw=true)
