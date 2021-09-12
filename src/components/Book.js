@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 import BookDesc from "./book/BookDesc";
-import BookDimensions from "./book/BookDimensions";
 import BookImg from "./book/BookImg";
+import BookRating from "./book/BookRating"
 import BookInfos from "./book/BookInfos";
 import DetailsAccordion from "./book/DetailsAccordion";
 
@@ -18,6 +18,8 @@ const Book = ({
     isbn,
     previewLink,
     description,
+    averageRating,
+    ratingsCount,
     id
 }) => {
     return (
@@ -36,7 +38,7 @@ const Book = ({
                     />
                 </div>
                 <div className="col-12 col-lg mt-3">
-                    <BookDimensions />
+                    <BookRating averageRating={averageRating} ratingsCount={ratingsCount}/>
                 </div>
             </div>
             <div className="row justify-content-md-center pb-5 ">

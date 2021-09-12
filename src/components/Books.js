@@ -38,6 +38,8 @@ const Books = ({ books, loading }) => {
                 isbn={book.volumeInfo.industryIdentifiers}
                 previewLink={book.volumeInfo.previewLink ?? <hr style={{width: '40%'}}></hr>}
                 description={book.volumeInfo.description ?? "Description not found"}
+                averageRating={book.volumeInfo.averageRating ?? 0}
+                ratingsCount={book.volumeInfo.ratingsCount ?? 0}
             />
         </div>
     ));
@@ -56,7 +58,8 @@ Books.propTypes = {
     isbn: PropTypes.array,
     previewLink: PropTypes.string,
     description: PropTypes.object,
-
+    averageRating: PropTypes.number,
+    ratingsCount: PropTypes.number
 };
 
 export default Books;
