@@ -23,6 +23,7 @@ const Search = (props) => {
                         placeholder="Search..."
                         aria-label="Search button"
                         style={{ boxShadow: "0px 0px 20px 9px #000000"}}
+                        required
                     />
                 </div>
                 <div className="col-3 col-sm-1 pt-sm-0 pt-4">
