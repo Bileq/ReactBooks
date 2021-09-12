@@ -44,9 +44,19 @@ const Books = ({ books, loading }) => {
 };
 
 Books.propTypes = {
-    thumbnailUrl: PropTypes.node,
+    url: PropTypes.string,
     title: PropTypes.string,
+    author: PropTypes.array,
+    publisher: PropTypes.string,
+    genre: PropTypes.array,
+    pages: PropTypes.number,
     id: PropTypes.string,
+    publishedDate: PropTypes.string,
+    lang: PropTypes.string,
+    isbn: PropTypes.array,
+    previewLink: PropTypes.string,
+    description: PropTypes.object,
+
 };
 
 export default Books;
