@@ -21,7 +21,7 @@ const Book = ({
     id
 }) => {
     return (
-        <div className="container" style={{ fontSize: "10px" }}>
+        <div className="container" style={{ fontSize: "10px", paddingTop: "20%" }}>
             <div className="row pt-5">
                 <div className="col-12 col-lg my-5">
                     <BookImg title={title} url={url} />

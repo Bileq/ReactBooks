@@ -13,10 +13,7 @@ const DetailsAccordion = ({
 }) => {
     const collapseId = `collapse${id}`;
     const dataBsTargetId = `#${collapseId}`;
-    let isbnNumber = ""
-
-    typeof isbn === "undefined" ? isbnNumber = ""
-    : isbnNumber= isbn[0].identifier
+    const isbnNumber = isbn?.[0].identifier  ?? <hr style={{width: '40%'}}></hr>
 
     return (
         <div className="accordion accordion-flush" id="details">
@@ -46,17 +43,17 @@ const DetailsAccordion = ({
                     <div className="accordion-body text-justify-start p-0">
                         <div className="container accordionBody">
                             <div className="row pt-3">
-                                <div className="col fw-bold">Publisher:</div>
+                                <div className="col fw-bold pb-3">Publisher:</div>
                                 <div className="col">{publisher}</div>
                             </div>
                             <div className="row">
-                                <div className="col text-truncate fw-bold">
+                                <div className="col text-truncate fw-bold pb-3">
                                     Published Date:
                                 </div>
                                 <div className="col">{publishedDate}</div>
                             </div>
                             <div className="row">
-                                <div className="col fw-bold">Language:</div>
+                                <div className="col fw-bold pb-3">Language:</div>
                                 <div
                                     className="col"
                                     style={{ textTransform: "uppercase" }}
@@ -65,14 +62,14 @@ const DetailsAccordion = ({
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col fw-bold">Pages:</div>
+                                <div className="col fw-bold pb-3">Pages:</div>
                                 <div className="col">{pages}</div>
                             </div>
                             <div className="row">
-                                <div className="col fw-bold">ISBN:</div>
+                                <div className="col fw-bold pb-3">ISBN:</div>
                                 <div className="col text-truncate">{isbnNumber}</div>
                             </div>
-                            <div className="row justify-content-center">
+                            <div className="row justify-content-center pb-3">
                                 <div className="col fw-bold">Preview link:</div>
                                 <div className="col">
                                     <a

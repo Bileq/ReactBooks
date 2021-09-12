@@ -3,11 +3,7 @@ import "../../App.css";
 import placeholder from "../../media/placeholder.png";
 
 const BookImg = ({ url, title }) => {
-    let imageSrc = "";
-
-    typeof url === "undefined"
-        ? (imageSrc = placeholder)
-        : (imageSrc = url.thumbnail);
+    const imageSrc = url?.thumbnail ?? placeholder
     return (
         <img
             src={imageSrc}

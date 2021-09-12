@@ -18,7 +18,6 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [paginationVisible, setPaginationVisible] = useState(false);
     const [zeroResults, setZeroResults] = useState(false);
-    const [readMore, setReadMore] = useState(false)
 
     const handleChange = (event) => {
         const book = event.target.value;
@@ -88,8 +87,6 @@ function App() {
                         books={currentBooks}
                         loading={loading}
                         setPaginationVisible={setPaginationVisible}
-                        readMore={readMore}
-                        setReadMore={setReadMore}
                     />
                 </div>
             ) : (
