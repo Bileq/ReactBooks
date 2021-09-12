@@ -19,9 +19,9 @@ find books and info about it.
 * axios 0.21
 
 ## Preview
-To see this project, visit this site [BookFinder]()
+To see this project, visit this site [BookFinder](https://react-books-finder-by-bileq.herokuapp.com/)
 
 ## Gallery
-![Header](./media/readmeMedia/Header.PNG)
-![Book](./media/readmeMedia/Book.PNG)
-![Details](./media/readmeMedia/Details.PNG)
+![Header](./src/media/readmeMedia/Header.png)
+![Book](./src/media/readmeMedia/Book.png)
+![Details](./src/media/readmeMedia/Details.png)
