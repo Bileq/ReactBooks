@@ -3,22 +3,24 @@ import "../App.css";
 
 const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
     const pageNumbers = [];
+    const range = 6;
 
     for (let i = 1; i <= Math.ceil(totalBooks / booksPerPage); i++) {
         pageNumbers.push(i);
     }
 
+    const pages = pageNumbers.length;
+
     const paginationRangeStart = (currentPage) =>
-        currentPage >= pageNumbers.length - 3
-            ? currentPage - 3 - (currentPage - (pageNumbers.length - 3))
-            : currentPage - 3;
+        currentPage >= pages - range / 2
+            ? pages - range
+            : currentPage - range / 2;
+
 
     const paginationRangeEnd = (currentPage) =>
-        currentPage < 3
-            ? currentPage +
-              3 +
-              (3 - (pageNumbers.length - (pageNumbers.length - currentPage)))
-            : currentPage + 3;
+        currentPage < range / 2
+            ? range
+            : currentPage + range / 2;
 
     return (
         <nav>
@@ -52,9 +54,9 @@ const Pagination = ({ booksPerPage, totalBooks, paginate, currentPage }) => {
                     </a>
                 </li>
                 {pageNumbers.map((number) => {
-                    if (
-                        number > paginationRangeStart(currentPage) &&
-                        number < paginationRangeEnd(currentPage)
+                    if ( 
+                        number > paginationRangeStart(currentPage) && 
+                        number < paginationRangeEnd(currentPage) 
                     ) {
                         return (
                             <li key={number} className="page-item">
