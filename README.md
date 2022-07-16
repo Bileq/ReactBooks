@@ -5,8 +5,8 @@ Book Finder app created with React.js, Node.js, Bootstrap and Google Books API
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Preview](#Preview)
-* [Gallery](#Gallery)
+* [Preview](#preview)
+* [Gallery](#gallery)
 
 ## General info
 This project will help you find your favorites books from google books. It is using Google Books API to 
